@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Evidence Dashboard</title>
+<style>
+body {
+font-family: Arial;
+background: #f5f5f5;
+}
+h2 {
+text-align: center;
+}
+img {
+width: 180px;
+margin: 8px;
+border: 3px solid #333;
+border-radius: 8px;
+}
+.container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+.note {
+text-align: center;
+color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<h2> Live Evidence Dashboard</h2>
+<p class="note">
+Decrypted images appear automatically from <b>evidence/decrypted</b>
+</p>
+
+<div class="container">
+<!-- Images will auto-load by browser -->
+<script>
+// This works because browser can directly load images from folder
+const folder = "evidence/decrypted/";
+const total = 500; // max images to try
+
+for (let i = 0; i < total; i++) {
+const img = document.createElement("img");
+img.src = folder + i + ".jpg";
+img.onerror = () => img.remove();
+document.body.appendChild(img);
+}
+</script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+torch
+ultralytics
+opencv-python
+PyQt5
+PyQtWebEngine
+cryptography
+fpdf
+playsound
